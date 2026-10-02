@@ -28,5 +28,18 @@ describe("hero section", () => {
 
     const video = container.querySelector("video");
     expect(video?.getAttribute("src")).toBe("/demo.mp4");
+
+    // The badge sits between the install pill and the demo video.
+    expect(
+      badge.compareDocumentPosition(video as Node) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      badge.compareDocumentPosition(
+        screen.getByLabelText(
+          "Copy install command: brew install raulmoracode/tap/brewsnap",
+        ),
+      ) & Node.DOCUMENT_POSITION_PRECEDING,
+    ).toBeTruthy();
   });
 });

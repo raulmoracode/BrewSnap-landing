@@ -53,11 +53,12 @@ export function HeroSection() {
             </div>
 
             <CopyInstallCommand command={INSTALL_COMMAND} />
+          </div>
 
+          <div className="mt-10 flex justify-center sm:mt-12">
             <PartOfRaulmoracode
               project={COMPANY.SHORT_NAME}
               highlightColor={HIGHLIGHT_COLOR}
-              className="mt-4"
             />
           </div>
 
