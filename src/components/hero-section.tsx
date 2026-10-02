@@ -1,10 +1,14 @@
 import { CopyInstallCommand } from "@/components/copy-install-command";
 import { DownloadButton } from "@/components/download-button";
+import { PartOfRaulmoracode } from "@/components/part-of-raulmoracode";
 import { ProductDemo } from "@/components/product-demo";
 import { StarGithubButton } from "@/components/star-github-button";
 import { COMPANY, DOWNLOAD_URL } from "@/lib/constants";
 
 const INSTALL_COMMAND = "brew install raulmoracode/tap/brewsnap";
+
+// Same amber the hero uses for the italic Homebrew highlight.
+const HIGHLIGHT_COLOR = "#FBB040";
 
 export function HeroSection() {
   return (
@@ -51,7 +55,14 @@ export function HeroSection() {
             <CopyInstallCommand command={INSTALL_COMMAND} />
           </div>
 
-          <div className="relative w-full max-w-7xl mx-auto mt-12 sm:mt-16 lg:mt-20">
+          <div className="mt-12 flex justify-center mb-2 sm:mt-16 lg:mt-20">
+            <PartOfRaulmoracode
+              project={COMPANY.SHORT_NAME}
+              highlightColor={HIGHLIGHT_COLOR}
+            />
+          </div>
+
+          <div className="relative w-full max-w-7xl mx-auto">
             <ProductDemo />
           </div>
         </div>
