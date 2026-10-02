@@ -21,6 +21,11 @@ describe("hero section", () => {
       "https://github.com/raulmoracode/BrewSnap",
     );
 
+    const badge = screen.getByLabelText(
+      "BrewSnap — part of raulmoracode ecosystem",
+    );
+    expect(badge.getAttribute("href")).toBe("https://raulmoracode.com");
+
     const video = container.querySelector("video");
     expect(video?.getAttribute("src")).toBe("/demo.mp4");
   });
